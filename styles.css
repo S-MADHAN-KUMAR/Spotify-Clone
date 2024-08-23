@@ -191,8 +191,10 @@ body{
     font-size: 15px;
     font-weight: 700;
     margin-right: 20px;
+    cursor: pointer;
 }
 .log-btn{
+    cursor: pointer;
     background: white;
     border: none;
     border-radius: 100px;
@@ -263,6 +265,7 @@ body{
     text-align: center;
 }
 .play-btn{
+    cursor: pointer;
     background: rgba(50, 241, 50, 0.829);
     border-radius: 50%;
     position: absolute;
@@ -270,6 +273,7 @@ body{
     bottom: 40%;
     opacity: 0;
     transition: all 0.3s ;
+    z-index: 4;
 }
 .card:hover .play-btn {
     opacity: 1;
@@ -385,6 +389,9 @@ td:hover{
     background: linear-gradient(to right, rgb(160, 10, 152), rgb(23, 187, 209));
     height: 63px;
     margin: 0 10px;
+    position: fixed;
+    right: 0;
+    left: 0;
 }
 .footer-det{
     display: flex;
@@ -406,8 +413,134 @@ td:hover{
     font-size: 15px;
     font-weight: 700;
     margin-right: 15px;
+    cursor: pointer;
 }
 .footer button:hover{
     scale: 1.05;
     background: rgb(235, 235, 235);
+}
+
+/* ---------------popup-panel------------------ */
+
+.popup-panel{
+    position: fixed;
+    z-index: 5; 
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.card .popup-panel .popup-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+.popup-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom , rgb(77, 34, 34) ,rgb(56, 52, 52));
+    padding: 60px;
+    display: flex;
+    border-radius: 7px;
+}
+.popup-det{
+    width: 300px;
+    height: 300px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.popup-det p {
+    color: #f3f3f3;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+}
+.popup-sign{
+    background: rgb(65, 204, 72);
+    border: none;
+    border-radius: 100px;
+    padding:15px 25px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.popup-down{
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 100px;
+    padding:13px 30px;
+    color: #ffffff;
+    font-size: 15.5px;
+    font-weight: 700;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.popup-sign:hover{
+    scale: 1.05;
+    background: rgb(118, 223, 123);
+}
+.popup-down:hover{
+    scale: 1.05;
+    border-color: rgb(255, 255, 255);
+}
+.popup-container .popup-acc{
+    font-size: 14px;
+    font-weight: 500;
+    color: #b8b3b3;
+    cursor: pointer;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+.popup-container .popup-acc span{
+    margin-left: 5px;
+    color: #fff;
+}
+.popup-container .popup-acc span:hover{
+    text-decoration: underline;
+}
+.close-btn {
+    color: #b3aeae;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    cursor: pointer;
+}
+.close-btn:hover{
+    color: #fff;
+    scale: 1.05;
+}
+/* ---------------function for popup-------------------- */
+
+#music-popup:checked~.popup-panel{
+    opacity: 1;
+    bottom: 0;
+    pointer-events:all;
+}
+.popup-panel{
+    pointer-events: none;
+    opacity: 0;
+    bottom: -180%;
+    transition: all 0.3s;
+}
+
+#close-panel:checked~.popup-panel{
+    display: none;
 }
