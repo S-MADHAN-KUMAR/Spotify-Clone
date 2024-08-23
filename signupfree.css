@@ -43,7 +43,7 @@ body{
     color: #1ed760;
     margin-bottom: 30px;
 }
-.form button{
+.nxt-btn{
     background: #1ed760;
     border: 0;
     border-radius: 100px;
@@ -51,6 +51,10 @@ body{
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+}
+.nxt-btn:hover{
+    scale: 1.03;
+    background: #40d875;
 }
 .or-line{
     display: flex;
@@ -66,9 +70,10 @@ body{
     color: #fff;
     margin: 0 5px 0 5px;
 }
-.form .g-btn{
+.g-btn{
     background: transparent;
     border :1px solid gray; 
+    border-radius: 100px;
     color: #fff;
     display: flex;
     align-items: center;
@@ -79,10 +84,14 @@ body{
     margin-bottom: 10px;
     cursor: pointer;
 }
-.form .g-btn img{
+.g-btn:hover{
+    scale: 1.03;
+    border-color: #fff;
+}
+.g-btn img{
     margin-right: auto;
 }
-.form .g-btn p {
+.g-btn p {
     margin-right: auto;
 }
 .end-line{
